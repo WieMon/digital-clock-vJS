@@ -1,18 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 
+/*Variables*/
+$color-light: #d4d9de;
+$color-dark: #001643;
+
+/*Global*/
 *, *::before, *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box; 
 }
 
+/*Main*/
 body {
-  background: #001643;
+  background: $color-dark;
   font-family: 'Orbitron', sans-serif;
 }
 
 .container {
   padding: 80px;
+  color: $color-light;
+}
+
+.time-zone {
+  width: 400px;
+  height: 165px;
+  margin: 15px auto;
   text-align: center;
-  color: #e6eeff;
+  border: 5px solid $color-light;
+  border-radius: 5px;
+}
+
+.badge {
+  padding: 5px 10px;
+  width: 101%;
+  background: $color-light;
+  color: $color-dark;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.clock {
+  padding: 30px 30px;
+  font-size: 45px;
 }
