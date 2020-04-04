@@ -21,5 +21,28 @@ function clock (){
   document.getElementById('second').innerHTML = ': ' + secs;
 }
 
-setInterval(clock, 100);
+function clockForLondon (){
+  const fullDate = new Date();
+  let hoursLondon = fullDate.getHours() - 1;
+  let minsLondon = fullDate.getMinutes();
+  let secsLondon = fullDate.getSeconds();
 
+  if (hoursLondon < 10){
+    hoursLondon = '0' + hoursLondon;
+  }
+
+  if (minsLondon < 10){
+    minsLondon = '0' + minsLondon;
+  }
+
+  if (secsLondon < 10){
+    secsLondon = '0' + secsLondon;
+  }
+
+  document.getElementById('hour-london').innerHTML = hoursLondon;
+  document.getElementById('minute-london').innerHTML = ': ' + minsLondon;
+  document.getElementById('second-london').innerHTML = ': ' + secsLondon;
+}
+
+setInterval(clock, 100);
+setInterval(clockForLondon, 100);
