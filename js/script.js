@@ -44,5 +44,29 @@ function clockForLondon (){
   document.getElementById('second-london').innerHTML = ': ' + secsLondon;
 }
 
+function clockForBangalore (){
+  const fullDate = new Date();
+  let hoursBangalore = fullDate.getHours() + 5;
+  let minsBangalore = fullDate.getMinutes() + 30; //sprawdzic
+  let secsBangalore = fullDate.getSeconds();
+
+  if (hoursBangalore < 10){
+    hoursBangalore = '0' + hoursBangalore;
+  }
+
+  if (minsBangalore < 10){
+    minsBangalore = '0' + minsBangalore;
+  }
+
+  if (secsBangalore < 10){
+    secsBangalore = '0' + secsBangalore;
+  }
+
+  document.getElementById('hour-bangalore').innerHTML = hoursBangalore;
+  document.getElementById('minute-bangalore').innerHTML = ': ' + minsBangalore;
+  document.getElementById('second-bangalore').innerHTML = ': ' + secsBangalore;
+}
+
 setInterval(clock, 100);
 setInterval(clockForLondon, 100);
+setInterval(clockForBangalore, 100);
