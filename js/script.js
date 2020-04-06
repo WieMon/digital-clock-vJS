@@ -46,8 +46,17 @@ function clockForLondon (){
 
 function clockForBangalore (){
   const fullDate = new Date();
-  let hoursBangalore = fullDate.getHours() + 5;
-  let minsBangalore = fullDate.getMinutes() + 30; //sprawdzic
+
+  let utc_offset = fullDate.getTimezoneOffset();
+  fullDate.setMinutes(fullDate.getMinutes() + utc_offset);
+  
+  let Bangalore_offset = 5.5*60;
+  fullDate.setMinutes(fullDate.getMinutes() + Bangalore_offset);
+
+  let hoursBangalore = fullDate.getHours();
+
+  let minsBangalore = fullDate.getMinutes();
+
   let secsBangalore = fullDate.getSeconds();
 
   if (hoursBangalore < 10){
