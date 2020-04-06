@@ -23,7 +23,14 @@ function clock (){
 
 function clockForLondon (){
   const fullDate = new Date();
-  let hoursLondon = fullDate.getHours() - 1;
+
+  let utc_offset = fullDate.getTimezoneOffset();
+  fullDate.setMinutes(fullDate.getMinutes() + utc_offset);
+
+  let London_offset = 1*60;
+  fullDate.setMinutes(fullDate.getMinutes() +London_offset);
+
+  let hoursLondon = fullDate.getHours();
   let minsLondon = fullDate.getMinutes();
   let secsLondon = fullDate.getSeconds();
 
