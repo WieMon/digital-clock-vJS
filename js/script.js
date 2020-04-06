@@ -83,6 +83,10 @@ function clockForBangalore (){
   document.getElementById('second-bangalore').innerHTML = ': ' + secsBangalore;
 }
 
-setInterval(clock, 100);
-setInterval(clockForLondon, 100);
-setInterval(clockForBangalore, 100);
+function main (){
+  setInterval(clock, 100);
+  setInterval(clockForLondon, 100);
+  setInterval(clockForBangalore, 100);
+}
+
+main();
